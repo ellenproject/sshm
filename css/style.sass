@@ -1,0 +1,802 @@
+$deep-blue: #015E9A
+
+*
+    margin: 0
+    padding: 0
+    max-width: 100%
+
+    svg
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        width: 80%
+        z-index: -1
+        @media ( max-width: 1024px )
+            width: 95%
+        @media ( max-width: 480px )
+            display: none
+    h2, h3
+        @media ( max-width: 991px )
+            font-size: 1rem
+
+@mixin deskBig()
+    @media ( max-width: 1440px )
+        @content
+@mixin desk()
+    @media ( max-width: 1200px )
+        @content
+@mixin deskMini()
+    @media ( max-width: 1024px )
+        @content
+@mixin padBig()
+    @media ( max-width: 991px )
+        @content
+@mixin pad()
+    @media ( max-width: 768px )
+        @content
+@mixin padMini()
+    @media ( max-width: 576px )
+        @content
+@mixin mobile()
+    @media ( max-width: 480px )
+        @content
+@mixin mobileMini()
+    @media ( max-width: 375px )
+        @content
+
+@keyframes appear
+    0%
+        opacity: 0
+    100%
+        opacity: 1
+@keyframes shadow-bounce
+    0%, 100%
+        box-shadow: 1px 1px 50px rgba(255, 255, 255, 0.9)
+        background-color: #fff
+    50%
+        box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.5)
+        background-color: #f0f0f0
+@keyframes horizontal
+    0%, 100%
+        transform: translateX(3px)
+    50%
+        transform: translateX(-3px)
+@keyframes sway
+    0%, 100%
+        transform: translateX(2px) rotate(1deg)
+    50%
+        transform: translateX(-2px) rotate(-1deg)
+    75%
+        transform: translateX(4px) rotate(0deg)
+@keyframes person-01
+    0%, 100%
+        // transform: translateY(1px)
+        background: url(../img/char-01.png) center center / contain no-repeat
+    50%
+        // transform: translateY(-1px)
+        background: url(../img/char-01-true.png) center center / contain no-repeat
+@keyframes person-02
+    0%, 100%
+        // transform: translateY(1px)
+        background: url(../img/char-02.png) center center / contain no-repeat
+    50%
+        // transform: translateY(-1px)
+        background: url(../img/char-02-true.png) center center / contain no-repeat
+@keyframes person-03
+    0%, 100%
+        // transform: translateY(1px)
+        background: url(../img/char-03.png) center center / contain no-repeat
+    50%
+        // transform: translateY(-1px)
+        background: url(../img/char-03-true.png) center center / contain no-repeat
+@keyframes person-04
+    0%, 100%
+        // transform: translateY(1px)
+        background: url(../img/char-04.png) center center / contain no-repeat
+    50%
+        // transform: translateY(-1px)
+        background: url(../img/char-04-true.png) center center / contain no-repeat
+@keyframes person-bounce
+    0%, 100%
+        transform: scale(1)
+    50%
+        transform: scale(1.1)
+@keyframes forward
+    0%
+        transform: translate(0) scaleX(1) skew(0deg)
+    50%
+        transform: translate(-215px,0) scaleX(.9) skew(-15deg, 5deg)
+    100%
+        transform: translate(215px,0) scaleX(1) skew(15deg, -5deg)
+@keyframes vanish
+    0%, 10%
+        transform: rotate(-12deg)
+    5%, 15%
+        transform: rotate(12deg)
+    20%
+        transform: scale(1.2)
+    25%
+        opacity: 1
+        transform: scale(1)
+    100%
+        opacity: 0
+        transform: scale(0) translateX(800px)
+
+body
+    position: relative
+    background: #000
+    .container
+        position: relative
+        height: 100vh
+        &::after
+            content: ''
+            position: absolute
+            width: 100%
+            height: 100vh
+            top: 0
+            left: 0
+            z-index: -2
+            background: url(../img/bg.jpg) center center/cover no-repeat
+        .wrap
+            position: relative
+            text-align: center
+            height: 100%
+            .grid
+                position: relative
+                height: 100%
+                display: -ms-inline-grid
+                display: -moz-inline-grid
+                display: inline-grid
+                align-content: space-around
+                @include padBig
+                    margin: 0 auto
+                @include pad
+                    align-content: center
+                .subtitle
+                    margin: 0 auto
+                    width: 50%
+                    -webkit-animation: appear 1.5s
+                    .Img
+                        padding: 20px 0
+                    @include mobile
+                        width: 90%
+                .start
+                    position: relative
+                    width: 100%
+                    text-align: center
+                    .Img
+                        -webkit-animation: horizontal 3.5s infinite
+                        margin: 0 auto
+                        @include pad
+                            width: 20%
+                        @include mobile
+                            width: 50%
+                    .button
+                        text-decoration: none
+                        text-align: center
+                        width: 40%
+                        padding: 20px
+                        color: $deep-blue
+                        border-radius: 15px
+                        display: block
+                        margin: 20px auto 0
+                        transition: all .5s ease-in-out
+                        -webkit-animation: shadow-bounce 3s infinite
+                        @include pad
+                            width: 20%
+                        &:hover
+                            background-color: #000
+            .intro
+                position: relative
+                text-align: center
+                width: 50%
+                margin: 5% auto
+                display: inline-block
+                @include deskMini
+                    margin: 25% auto
+                @include padBig
+                    width: 80%
+                @include pad
+                    width: 100%
+                    // margin: 20% auto
+                    margin: 5% auto
+                @include mobile
+                    width: 90%
+                .typing
+                    width: 70%
+                    color: $deep-blue
+                    padding: 40px 20px
+                    background-color: #fff
+                    margin: 0 auto
+                    @include deskMini
+                        width: 100%
+                    @include padBig
+                        width: 90%
+                    @include pad
+                        padding: 20px
+                        width: 70%
+                    @include mobile
+                        width: 90%
+                .contain
+                    position: absolute
+                    display: flex
+                    width: 80%
+                    top: 80%
+                    left: 50%
+                    transform: translateX(-50%)
+                    @include deskMini
+                        width: 100%
+                        top: 70%
+                    @include pad
+                        // width: 80%
+                        width: 40%
+                        top: 100%
+                    @include mobile
+                        width: 100%
+                        top: 65%
+                    .ship
+                        width: 70%
+                        -webkit-animation: sway 3.5s infinite cubic-bezier(.14,.61,.6,.44)
+                    .person
+                        width: 30%
+                        position: relative
+                        @include mobile
+                            width: 30%
+                    .person-01
+                        -webkit-animation: person-01 2.5s infinite
+                    .person-02
+                        -webkit-animation: person-02 2.5s infinite
+                    .person-03
+                        -webkit-animation: person-03 2.5s infinite
+                    .person-04
+                        -webkit-animation: person-04 2.5s infinite
+            .next
+                position: absolute
+                bottom: 10%
+                left: 50%
+                transform: translateX(-50%)
+                width: 20%
+                @include deskMini
+                    width: 30%
+                @include padBig
+                    bottom: 30%
+                @include pad
+                    width: 40%
+                    // bottom: 20%
+                    bottom: 5%
+                @include padMini
+                    bottom: 15%
+                @include mobile
+                    width: 60%
+                a
+                    text-decoration: none
+                    padding: 20px
+                    color: $deep-blue
+                    border-radius: 15px
+                    display: block
+                    margin: 20px auto 0
+                    transition: all .5s ease-in-out
+                    -webkit-animation: shadow-bounce 3s infinite
+                    &:hover
+                        background-color: #000
+    .overlay
+        position: fixed
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background-color: rgba(0, 0, 0, 0.5)
+        // transition: opacity 200ms
+        visibility: hidden
+        opacity: 0
+        .popup
+            margin: 0 auto
+            height: 100%
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.5)
+            position: relative
+            &::after
+                content: ''
+                position: absolute
+                width: 100%
+                height: 100%
+                top: 0
+                left: 0
+                // z-index: const(--z-index)
+                z-index: -1
+            .body
+                z-index: 3
+        .popup--2
+            margin: 0 auto
+            width: 90%
+            @include pad
+                width: 100%
+                display: inline-grid
+                align-content: center
+            &::after
+                opacity: 0.9
+                background-color: $deep-blue
+            h2
+                color: #fff
+                text-align: center
+                padding: 80px 0 0px
+                text-shadow: 1px 1px 15px rgba(0, 0, 0, 1)
+                -webkit-animation: appear 4.5s
+                @include padBig
+                    padding: 0
+            .body
+                margin: 0 auto
+                text-align: center
+                color: #fff
+                width: 100%
+                .character
+                    width: 80%
+                    flex-wrap: nowrap
+                    display: flex
+                    margin: 0 auto
+                    justify-content: space-between
+                    @include padBig
+                        width: 70%
+                    @include mobile
+                        justify-content: center
+                        flex-wrap: nowrap
+                        width: 95%
+                    .char
+                        width: 20%
+                        margin: 0 20px
+                        color: #fff
+                        text-decoration: none
+                        @include padBig
+                            width: 15%
+                            margin: 0
+                        @include mobile
+                            width: 20%
+                            margin: 0 10px
+                        &:hover
+                            .arrow
+                                opacity: 1
+                            .person
+                                filter: drop-shadow(0 0 15px #fff)
+                                -webkit-animation: person-bounce 1.5s infinite
+                            .name
+                                text-shadow: 1px 1px 15px rgba(0, 0, 0, 1)
+                        .arrow, .person, .name
+                            transition: all .5s ease-in-out
+                        .arrow
+                            opacity: 0
+                        .person
+                            margin: 15px auto
+                        .name
+                            text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.8)
+                            span
+                                @include mobile
+                                    font-size: 12px
+        .popup--3
+            text-align: center
+            position: relative
+            &::after
+                // background: const(--background)
+                background: url(../img/bg-dark.jpg) center center/cover no-repeat
+            .body--3
+                width: 100%
+                margin: 0 auto
+                position: relative
+                // padding: 20px 0 0 0
+                padding: 0
+                height: 100%
+                .wrap
+                    position: relative
+                    display: flex
+                    width: 100%
+                    justify-content: space-around
+                    height: 100%
+                    align-items: center
+                    @include padBig
+                        // height: 70%
+                        height: 100%
+                    @include padMini
+                        height: 50%
+                    @include mobile
+                        display: block
+                    .emotion
+                        position: relative
+                        width: 20%
+                        padding: 300px 0
+                        @include mobile
+                            padding: 100px 0
+                            margin: 0 auto
+                    .choice
+                        position: relative
+                        width: 70%
+                        margin: 0 auto
+                        height: 90%
+                        @include padMini
+                            // display: -ms-inline-grid
+                            // display: -moz-inline-grid
+                            // display: inline-grid
+                            // height: 100%
+                        @include mobile
+                            width: 90%
+                        .changeInfo
+                            color: #fff
+                            margin: 0 auto
+                            position: relative
+                            z-index: 1
+                            @include mobile
+                                width: 100%
+                        ul
+                            display: flex
+                            flex-wrap: wrap
+                            width: 100%
+                            // height: 70%
+                            height: 50%
+                            justify-content: space-around
+                            align-content: space-around
+                            list-style: none
+                            margin: 0 auto
+                            // @include padMini
+                            //     margin: 25% auto
+                            //     height: 0
+                            li
+                                // width: 23%
+                                width: 20%
+                                text-align: center
+                                transition: all 1s ease-in-out
+                                height: 80%
+                                &:hover
+                                    .arrow
+                                        opacity: 1
+                                    .op
+                                        filter: drop-shadow(1px 1px 15px rgba(255, 255, 255, 0.8))
+                                        transition: all 1s ease-in-out
+                                    .op--1
+                                        background: url(../img/op-01s.png) center center / contain no-repeat
+                                    .op--2
+                                        background: url(../img/op-02s.png) center center / contain no-repeat
+                                    .op--3
+                                        background: url(../img/op-03s.png) center center / contain no-repeat
+                                    .op--4
+                                        background: url(../img/op-04s.png) center center / contain no-repeat
+                                    .op--5
+                                        background: url(../img/op-05s.png) center center / contain no-repeat
+                                    .op--6
+                                        background: url(../img/op-06s.png) center center / contain no-repeat
+                                    .op--7
+                                        background: url(../img/op-07s.png) center center / contain no-repeat
+                                    .op--8
+                                        background: url(../img/op-04s.png) center center / contain no-repeat
+                                    .op--9
+                                        background: url(../img/op-08s.png) center center / contain no-repeat
+                                    .op--10
+                                        background: url(../img/op-06s.png) center center / contain no-repeat
+                                    .op--11
+                                        background: url(../img/op-07s.png) center center / contain no-repeat
+                                    .op--12
+                                        background: url(../img/op-04s.png) center center / contain no-repeat
+                                    .op--13
+                                        background: url(../img/op-01s.png) center center / contain no-repeat
+                                    .op--14
+                                        background: url(../img/op-07s.png) center center / contain no-repeat
+                                    .op--15
+                                        background: url(../img/op-03s.png) center center / contain no-repeat
+                                    .op--16
+                                        background: url(../img/op-08s.png) center center / contain no-repeat
+                                .arrow
+                                    opacity: 0
+                                    color: #fff
+                                .op
+                                    width: 100%
+                                    // padding: 180px 0
+                                    height: 100%
+                                    padding: 0
+                                    cursor: pointer
+                                    display: block
+                                    // @include mobile
+                                    //     padding: 60px 0
+                                .op--1
+                                    background: url(../img/op-01.png) center center / contain no-repeat
+                                .op--2
+                                    background: url(../img/op-02.png) center center / contain no-repeat
+                                .op--3
+                                    background: url(../img/op-03.png) center center / contain no-repeat
+                                .op--4
+                                    background: url(../img/op-04.png) center center / contain no-repeat
+                                .op--5
+                                    background: url(../img/op-05.png) center center / contain no-repeat
+                                .op--6
+                                    background: url(../img/op-06.png) center center / contain no-repeat
+                                .op--7
+                                    background: url(../img/op-07.png) center center / contain no-repeat
+                                .op--8
+                                    background: url(../img/op-04.png) center center / contain no-repeat
+                                .op--9
+                                    background: url(../img/op-08.png) center center / contain no-repeat
+                                .op--10
+                                    background: url(../img/op-06.png) center center / contain no-repeat
+                                .op--11
+                                    background: url(../img/op-07.png) center center / contain no-repeat
+                                .op--12
+                                    background: url(../img/op-04.png) center center / contain no-repeat
+                                .op--13
+                                    background: url(../img/op-01.png) center center / contain no-repeat
+                                .op--14
+                                    background: url(../img/op-07.png) center center / contain no-repeat
+                                .op--15
+                                    background: url(../img/op-03.png) center center / contain no-repeat
+                                .op--16
+                                    background: url(../img/op-08.png) center center / contain no-repeat
+                                .op--2selected
+                                    background: url(../img/op-02s.png) center center / contain no-repeat
+                                    filter: drop-shadow(1px 1px 15px rgba(255, 255, 255, 0.8))
+                                .op--4selected
+                                    background: url(../img/op-04s.png) center center / contain no-repeat
+                                    filter: drop-shadow(1px 1px 15px rgba(255, 255, 255, 0.8))
+                                .op--5selected
+                                    background: url(../img/op-05s.png) center center / contain no-repeat
+                                    filter: drop-shadow(1px 1px 15px rgba(255, 255, 255, 0.8))
+                                .op--7selected
+                                    background: url(../img/op-07s.png) center center / contain no-repeat
+                                    filter: drop-shadow(1px 1px 15px rgba(255, 255, 255, 0.8))
+                                .op--10selected
+                                    background: url(../img/op-06s.png) center center / contain no-repeat
+                                    filter: drop-shadow(1px 1px 15px rgba(255, 255, 255, 0.8))
+                                .op--11selected
+                                    background: url(../img/op-07s.png) center center / contain no-repeat
+                                    filter: drop-shadow(1px 1px 15px rgba(255, 255, 255, 0.8))
+                                .op--15selected
+                                    background: url(../img/op-03s.png) center center / contain no-repeat
+                                    filter: drop-shadow(1px 1px 15px rgba(255, 255, 255, 0.8))
+                                .op--16selected
+                                    background: url(../img/op-08s.png) center center / contain no-repeat
+                                    filter: drop-shadow(1px 1px 15px rgba(255, 255, 255, 0.8))
+                        .contain
+                            position: relative
+                            display: flex
+                            width: 100%
+                            align-items: flex-end
+                            justify-content: center
+                            .ware
+                                width: 20%
+                                margin: 0 70px
+                                transition: all .5s ease-in-out
+                                opacity: 1
+
+                                height: 50%
+                                display: inline-flex
+                                @include padMini
+                                    width: 30%
+                                    margin: 0 20px
+                                @include mobile
+                                    width: 50%
+                                    margin: 0 30px
+                            .vanish-selected
+                                -webkit-animation: vanish -1s 3.5s
+                                opacity: 0
+                            .moving-selected
+                                transform: translate(215px,0) scaleX(1) skew(15deg, -5deg)
+                                -webkit-animation: forward 3.5s
+                .link
+                    position: absolute
+                    bottom: 10%
+                    right: 10%
+                    font-size: 1.5rem
+                    font-weight: 600
+                    cursor: pointer
+                    color: #fff
+                    background-color: #000
+                    padding: 10px 30px
+                    border-radius: 10px
+                    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5)
+                    @include padBig
+                        bottom: 5%
+                    @include padMini
+                        bottom: 30%
+                    @include mobile
+                        bottom: 15%
+                        font-size: 1rem
+        .popup--4
+            position: relative
+            .fullscreen
+                position: relative
+                height: 100vh
+                overflow: hidden
+                z-index: 5
+                // &::after
+                //     content: ''
+                //     position: absolute
+                //     width: 100%
+                //     height: 100%
+                //     background: url(../img/bg-dark.jpg) center center/cover no-repeat
+                //     z-index: -5
+                .myVideo
+                    position: absolute
+                    width: 90%
+                    height: 100vh
+                    top: 50%
+                    left: 50%
+                    transform: translate(-50%, -50%)
+                    z-index: 3
+            .mute-video
+                position: absolute
+                bottom: 50px
+                right: 160px
+                z-index: 1
+                width: 20px
+                height: 20px
+                @include mobile
+                    right: 70px
+                .play, .pause, .bgm
+                    display: none
+                    cursor: pointer
+                    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.6))
+                .active
+                    display: block
+                    cursor: pointer
+        .popup--5
+            text-align: center
+            position: relative
+            display: flex
+            align-items: center
+            &::after
+                background: url(../img/bg-dark.jpg) center center/cover no-repeat
+            .body--5
+                width: 80%
+                margin: 0 auto
+                position: relative
+                height: 80%
+                z-index: 2
+                align-items: center
+                align-content: space-around
+                @include deskMini
+                    margin: 5% auto
+                    width: 100%
+                    height: 80%
+                @include pad
+                    width: 90%
+                @include mobile
+                    align-items: center
+                .success
+                    position: relative
+                    color: #fff
+                    text-shadow: 5px 5px 25px rgba(0, 0, 0, 1)
+                    .subtitle
+                        font-size: 2.5rem
+                        @include desk
+                            font-size: 1.2rem
+                    .des
+                        font-size: 1.2rem
+                        @include mobile
+                            font-size: .8rem
+                        br
+                            @include mobile
+                                display: none
+                .wrap
+                    position: relative
+                    display: flex
+                    justify-content: space-around
+                    align-items: center
+                    margin: 0 auto
+                    width: 90%
+                    @include desk
+                        width: 100%
+                    @include mobile
+                        display: block
+                    .item
+                        width: 25%
+                        filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.5))
+                        display: flex
+                        align-items: flex-end
+                        justify-content: space-around
+                        margin: 0 auto
+                        @include deskBig
+                            width: 20%
+                        @include mobile
+                            width: 100%
+                        .left
+                            display: flex
+                            align-items: flex-end
+                            @include mobile
+                                width: 30%
+                        .right
+                            @include mobile
+                                width: 40%
+                            .mobile-b
+                                display: none
+                                @include mobile
+                                    display: block
+                                    transform: scaleX(-1)
+                        .mobile-n
+                            transform: scaleX(-1)
+                            display: block
+                            @include mobile
+                                display: none
+                    .buttons
+                        position: relative
+                        display: flex
+                        width: 50%
+                        margin: 0 auto
+                        color: #fff
+                        justify-content: center
+                        align-items: center
+                        @include desk
+                            width: 50%
+                        @include mobile
+                            width: 100%
+                        .again, .next, .qrcode
+                            display: grid
+                            justify-content: center
+                            margin: 0 15px
+                            font-size: 1.5rem
+                            width: 30%
+                            align-items: center
+                            color: #fff
+                            text-decoration: none
+                            @include desk
+                                font-size: 1rem
+                .logos
+                    position: relative
+                    width: 100%
+                    display: flex
+                    justify-content: space-around
+                    @include mobile
+                        margin: 50px auto 0
+                        align-items: flex-start
+                    .logo
+                        position: relative
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        @include mobile
+                            display: block
+                        h5
+                            color: #fff
+                            margin: 0 20px
+                            padding: 2px
+                            border: 1px solid #fff
+                            @include pad
+                                margin: 0 10px
+                                padding: 0
+                                border: 0
+                    .host
+                        width: 20%
+                        @include pad
+                            width: 30%
+                        @include mobile
+                            width: 30%
+                        .Img
+                            width: 50%
+                            @include pad
+                                width: 20%
+                            @include mobile
+                                width: 100%
+                    .undertake
+                        width: 30%
+                        @include pad
+                            width: 40%
+                        @include mobile
+                            width: 30%
+                        .Img
+                            width: 30%
+                            @include pad
+                                width: 20%
+                            @include mobile
+                                width: 100%
+                    .coorgan
+                        width: 50%
+                        @include pad
+                            width: 50%
+                        @include mobile
+                            width: 30%
+                        .Img
+                            width: 25%
+                            @include pad
+                                width: 20%
+                            @include mobile
+                                width: 100%
+            svg
+                z-index: 1
+    .visible
+        visibility: visible
+        opacity: 1
+        z-index: 1
+    
