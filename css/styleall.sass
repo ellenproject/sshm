@@ -254,14 +254,6 @@ body
                     .person
                         width: 30%
                         position: relative
-                    // .person-01
-                    //     -webkit-animation: person-01 2.5s infinite
-                    // .person-02
-                    //     -webkit-animation: person-02 2.5s infinite
-                    // .person-03
-                    //     -webkit-animation: person-03 2.5s infinite
-                    // .person-04
-                    //     -webkit-animation: person-04 2.5s infinite
             .next
                 position: absolute
                 bottom: 10%
@@ -381,13 +373,13 @@ body
                             span
                                 @include mobile
                                     font-size: 12px
-        .popup--3, popup--5, .popup--7, .popup--9
+        .popup--3, .popup--6, .popup--9, .popup--12
             text-align: center
             position: relative
             &::after
                 // background: var(--background)
                 background: url(../img/bg-dark.jpg) center center/cover no-repeat
-            .body--3
+            .body--3, .body--6, .body--9, .body--12
                 width: 100%
                 margin: 0 auto
                 position: relative
@@ -574,31 +566,12 @@ body
                             .moving-selected
                                 transform: translate(215px,0) scaleX(1) skew(15deg, -5deg)
                                 -webkit-animation: forward 3.5s
-                .link
-                    position: absolute
-                    bottom: 10%
-                    right: 10%
-                    font-size: 1.5rem
-                    font-weight: 600
-                    cursor: pointer
-                    color: #fff
-                    background-color: #000
-                    padding: 10px 30px
-                    border-radius: 10px
-                    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5)
-                    @include padBig
-                        bottom: 5%
-                    @include padMini
-                        bottom: 30%
-                    @include mobile
-                        bottom: 15%
-                        font-size: 1rem
-        .popup--4, .popup--6, .popup--8, .popup--10
+        .popup--4, .popup--7, .popup--10, .popup--13
             position: relative
             &::after
                 background: url(../img/bg-dark.jpg) center center/cover no-repeat
                 z-index: -1
-            .body--4
+            .body--4, .body--7, .body--10, .body--13
                 position: relative
                 width: 100%
                 height: 100vh
@@ -626,14 +599,14 @@ body
                     //     transform: translate(-50%, -50%)
                     //     z-index: 3
                     //     display: block
-        .popup--11
+        .popup--14
             text-align: center
             position: relative
             display: flex
             align-items: center
             &::after
                 background: url(../img/bg-dark.jpg) center center/cover no-repeat
-            .body--5
+            .body--14
                 width: 80%
                 margin: 0 auto
                 position: relative
@@ -813,7 +786,7 @@ body
         .active
             display: block
             cursor: pointer
-    .overlay--12
+    .overlay--15
         position: fixed
         top: 0
         left: 0
@@ -822,15 +795,15 @@ body
         background: url(../img/answer_right.png) center center/cover no-repeat
         visibility: hidden
         opacity: 0
-        .popup--6
+        .popup--15
             position: relative
             height: 100%
             box-shadow: 0 0 50px rgba(0, 0, 0, 0.5)
-            .body--6
+            .body--15
                 position: relative
                 width: 100%
                 z-index: 3
-    .overlay--13
+    .overlay--16
         position: fixed
         top: 0
         left: 0
@@ -839,11 +812,11 @@ body
         background: url(../img/answer_wrong.png) center center/cover no-repeat
         visibility: hidden
         opacity: 0
-        .popup--6
+        .popup--16
             position: relative
             height: 100%
             box-shadow: 0 0 50px rgba(0, 0, 0, 0.5)
-            .body--6
+            .body--16
                 position: relative
                 width: 100%
                 z-index: 3
