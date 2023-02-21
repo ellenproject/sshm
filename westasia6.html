@@ -377,8 +377,9 @@
                             vid.play();
                             vid.currentTime = 0;
                             vid.addEventListener('ended', function(){
-                                $('.show--4').removeClass('visible');
-                                $('.show--5').addClass('visible');
+                                // $('.show--4').removeClass('visible');
+                                // $('.show--5').addClass('visible');
+                                parent.window.location.assign("./ryukyu.html")
                                 $('.game-audio').remove();
                             });
                             gameAudio.pause();
@@ -416,8 +417,9 @@
                             vid.play();
                             vid.currentTime = 0;
                             vid.addEventListener('ended', function(){
-                                $('.show--4').removeClass('visible');
-                                $('.show--5').addClass('visible');
+                                // $('.show--4').removeClass('visible');
+                                // $('.show--5').addClass('visible');
+                                parent.window.location.assign("./ryukyu.html")
                                 $('.game-audio').remove();
                             });
                             gameAudio.pause();

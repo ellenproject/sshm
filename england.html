@@ -87,7 +87,9 @@
             </div>
         </div>
     </div>
+
     <!-- 結束頁 -->
+    <!-- 
     <div id="popup5" class="overlay show--5">
         <div class="popup popup--5">
             <div class="body body--5">
@@ -135,6 +137,8 @@
             <svg id="圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1862.77 1017.34"><defs><style>.cls-1,.cls-2{fill:none;stroke:#fff;stroke-miterlimit:10;}.cls-1{stroke-width:2.03px;}.cls-2{stroke-width:2px;}</style></defs><rect class="cls-1" x="13.39" y="11.56" width="1836" height="994.21"/><path class="cls-2" d="M1856.77,1047.72c0-.6,0-1.2,0-1.81a34.15,34.15,0,0,1,34.14-34.15h0V66.53h0a34.15,34.15,0,0,1-34.14-34.15H64.24A34.15,34.15,0,0,1,30.1,66.53v945.23a34.15,34.15,0,0,1,34.14,34.15c0,.61,0,1.21,0,1.81Z" transform="translate(-29.1 -31.38)"/></svg>
         </div>
     </div>
+     -->
+     
     <!-- 答對 -->
     <div id="popup6" class="overlay--6 show--6">
         <div class="popup popup--6">
@@ -347,8 +351,9 @@
                             vid.play();
                             vid.currentTime = 0;
                             vid.addEventListener('ended', function(){
-                                $('.show--4').removeClass('visible');
-                                $('.show--5').addClass('visible');
+                                // $('.show--4').removeClass('visible');
+                                // $('.show--5').addClass('visible');
+                                parent.window.location.assign("./china.html")
                                 $('.game-audio').remove();
                             });
                             gameAudio.pause();
@@ -375,8 +380,9 @@
                             vid.play();
                             vid.currentTime = 0;
                             vid.addEventListener('ended', function(){
-                                $('.show--4').removeClass('visible');
-                                $('.show--5').addClass('visible');
+                                // $('.show--4').removeClass('visible');
+                                // $('.show--5').addClass('visible');
+                                parent.window.location.assign("./china.html")
                                 $('.game-audio').remove();
                             });
                             gameAudio.pause();
